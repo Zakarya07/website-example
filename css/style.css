@@ -1,0 +1,25 @@
+* { padding: 0; margin: 0; box-sizing: border-box; }
+
+nav { height: 10vh; display: flex; justify-content: space-around; background-color: #fff; }
+
+nav div:first-of-type { flex-grow: 2; display: flex; justify-content: flex-start; align-items: center; font-size: 3em; padding: 0.5em 2em; text-transform: uppercase; }
+
+nav ul { flex-grow: 1; display: flex; justify-content: space-around; align-items: center; }
+
+nav ul li { list-style: none; padding: .5em 1em; }
+
+nav ul li:last-child { background-color: #ba024a; border-radius: 20px; padding: .5em 3em; }
+
+nav ul li:last-child a { color: white; }
+
+nav ul li a { color: black; text-decoration: none; font-size: 1.2em; }
+
+nav .socials { flex-grow: 1; display: flex; justify-content: space-around; align-items: center; }
+
+nav .socials i { color: #ba024a; font-size: 1.25em; }
+
+nav .card_container { flex-grow: 1; display: flex; justify-content: center; align-items: center; }
+
+nav .card_container i { font-size: 1.25em; }
+
+section { width: 98%; margin: 0 auto; height: 87.5vh; background: url("../Images/bg-image.jpg"); background-size: cover; background-position: 100%; filter: contrast(95%) brightness(95%); }
