@@ -13,6 +13,7 @@ nav{
     justify-content: space-around;
     background-color: #fff;
 
+    // Logo Container
     div:first-of-type{
         flex-grow: 2;
         display: flex;
@@ -21,6 +22,15 @@ nav{
         font-size: 3em;
         padding: 0.5em 2em;
         text-transform: uppercase;
+        position: relative;
+        
+        img{
+            position: absolute;
+            left: 32.5%;
+            width: 1vw;
+            height: 2vh;
+            top: 49%;
+        }
     }
 
     ul{
@@ -32,14 +42,33 @@ nav{
         li{
             list-style: none;
             padding: .5em 1em;
+            border-radius: 20px;
+            transition: all .15s linear;
+
+            &:not(:last-child):hover{
+                background: #000;
+
+                &:not(:last-child):hover a {
+                    color: white;
+                }
+            }
             
             &:last-child{
                 background-color:$main_color;
-                border-radius: 20px;
                 padding: .5em 3em;
+                outline: 1px solid transparent;
+                
+                &:hover{
+                    background-color: #000;
+                }
 
+                &:hover a{
+                    color: lighten($main_color,40%);
+                }
+                
                 a{
                     color: white;
+                    transition: all .25s linear;
                 }
             }
             
@@ -47,6 +76,7 @@ nav{
                 color: black;
                 text-decoration: none;
                 font-size: 1.2em;  
+                transition: all .5s linear;
             }
         }
     }
@@ -56,6 +86,11 @@ nav{
         display: flex;
         justify-content: space-around;
         align-items: center;
+
+        a:hover{
+            transform: scale(1.1);
+            transition: transform .15s linear;
+        }
 
         i{
             color: $main_color;
@@ -78,9 +113,24 @@ nav{
 section{
     width: 98%;
     margin: 0 auto;
-    height: 87.5vh;
-    background:url("../Images/bg-image.jpg");
+    height: 89vh;
+    background:url("../Images/bg-image-5.jpg");
     background-size:cover;
-    background-position: 100%;
+    background-position: center 100%;
     filter: contrast(95%) brightness(95%);
+    animation: move_bg 60s alternate-reverse linear infinite, contrast 15s alternate-reverse linear infinite;
+    
+}
+
+
+@keyframes move_bg{
+    100%{
+        background-position: center 10%;
+    }
+}
+
+@keyframes contrast{
+    100%{
+        filter: contrast(125%) brightness(100%);
+    }
 }
