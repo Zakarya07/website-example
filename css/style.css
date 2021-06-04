@@ -2,19 +2,31 @@
 
 nav { height: 10vh; display: flex; justify-content: space-around; background-color: #fff; }
 
-nav div:first-of-type { flex-grow: 2; display: flex; justify-content: flex-start; align-items: center; font-size: 3em; padding: 0.5em 2em; text-transform: uppercase; }
+nav div:first-of-type { flex-grow: 2; display: flex; justify-content: flex-start; align-items: center; font-size: 3em; padding: 0.5em 2em; text-transform: uppercase; position: relative; }
+
+nav div:first-of-type img { position: absolute; left: 32.5%; width: 1vw; height: 2vh; top: 49%; }
 
 nav ul { flex-grow: 1; display: flex; justify-content: space-around; align-items: center; }
 
-nav ul li { list-style: none; padding: .5em 1em; }
+nav ul li { list-style: none; padding: .5em 1em; border-radius: 20px; transition: all .15s linear; }
 
-nav ul li:last-child { background-color: #ba024a; border-radius: 20px; padding: .5em 3em; }
+nav ul li:not(:last-child):hover { background: #000; }
 
-nav ul li:last-child a { color: white; }
+nav ul li:not(:last-child):hover:not(:last-child):hover a { color: white; }
 
-nav ul li a { color: black; text-decoration: none; font-size: 1.2em; }
+nav ul li:last-child { background-color: #ba024a; padding: .5em 3em; outline: 1px solid transparent; }
+
+nav ul li:last-child:hover { background-color: #000; }
+
+nav ul li:last-child:hover a { color: #fe8ab7; }
+
+nav ul li:last-child a { color: white; transition: all .25s linear; }
+
+nav ul li a { color: black; text-decoration: none; font-size: 1.2em; transition: all .5s linear; }
 
 nav .socials { flex-grow: 1; display: flex; justify-content: space-around; align-items: center; }
+
+nav .socials a:hover { transform: scale(1.1); transition: transform .15s linear; }
 
 nav .socials i { color: #ba024a; font-size: 1.25em; }
 
@@ -22,4 +34,8 @@ nav .card_container { flex-grow: 1; display: flex; justify-content: center; alig
 
 nav .card_container i { font-size: 1.25em; }
 
-section { width: 98%; margin: 0 auto; height: 87.5vh; background: url("../Images/bg-image.jpg"); background-size: cover; background-position: 100%; filter: contrast(95%) brightness(95%); }
+section { width: 98%; margin: 0 auto; height: 89vh; background: url("../Images/bg-image-5.jpg"); background-size: cover; background-position: center 100%; filter: contrast(95%) brightness(95%); animation: move_bg 60s alternate-reverse linear infinite, contrast 15s alternate-reverse linear infinite; }
+
+@keyframes move_bg { 100% { background-position: center 10%; } }
+
+@keyframes contrast { 100% { filter: contrast(125%) brightness(100%); } }
